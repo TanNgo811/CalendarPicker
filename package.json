@@ -1,6 +1,6 @@
 {
-  "name": "react-native-calendar-picker",
-  "version": "7.1.2",
+  "name": "@ngotientan/react-native-calendar-picker",
+  "version": "7.1.3",
   "description": "Calendar Picker Component for React Native",
   "engines": {
     "node": ">=4.0.0"
@@ -34,6 +34,10 @@
   "author": {
     "name": "Stephani Alves",
     "email": "alves@stephanimoroni.com"
+  },
+  "customed by" : {
+    "name": "Tan Ngo",
+    "email": "ngotientan811@gmail.com"
   },
   "license": "MIT",
   "bugs": {

@@ -13,6 +13,8 @@ export default function MonthsGridView(props) {
     textStyle,
     minDate,
     maxDate,
+    selectedMonth,
+    selectedMonthStyle,
   } = props;
   const _months = Array.from(Array(12).keys());
   const columnArray = [ 0, 1, 2 ];
@@ -22,17 +24,19 @@ export default function MonthsGridView(props) {
     const column = columnArray.map(index => {
       const currentMonth = _months.shift();
       return (
-        <Month
-          key={currentMonth + index}
-          currentMonth={currentMonth}
-          currentYear={currentYear}
-          months={months}
-          styles={styles}
-          onSelectMonth={onSelectMonth}
-          minDate={minDate}
-          maxDate={maxDate}
-          textStyle={textStyle}
-        />
+          <Month
+              key={currentMonth + index}
+              currentMonth={currentMonth}
+              currentYear={currentYear}
+              months={months}
+              styles={styles}
+              onSelectMonth={onSelectMonth}
+              minDate={minDate}
+              maxDate={maxDate}
+              textStyle={textStyle}
+              selectedMonth={selectedMonth}
+              selectedMonthStyle={selectedMonthStyle}
+          />
       );
     });
     return column;

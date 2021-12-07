@@ -24,26 +24,31 @@ export default class MonthSelector extends Component {
       minDate,
       maxDate,
       onSelectMonth,
+      titleVisible,
+      selectedMonth,
+      selectedMonthStyle,
     } = this.props;
 
     return (
-      <View styles={styles.calendar}>
-        <MonthsHeader
-          styles={styles}
-          textStyle={textStyle}
-          title={title + currentYear}
-          headingLevel={headingLevel}
-        />
-        <MonthsGridView
-          styles={styles}
-          textStyle={textStyle}
-          currentYear={currentYear}
-          months={months}
-          minDate={minDate}
-          maxDate={maxDate}
-          onSelectMonth={onSelectMonth}
-        />
-      </View>
+        <View styles={styles.calendar}>
+          {titleVisible && (<MonthsHeader
+              styles={styles}
+              textStyle={textStyle}
+              title={title + currentYear}
+              headingLevel={headingLevel}
+          />)}
+          <MonthsGridView
+              styles={styles}
+              textStyle={textStyle}
+              currentYear={currentYear}
+              months={months}
+              minDate={minDate}
+              maxDate={maxDate}
+              onSelectMonth={onSelectMonth}
+              selectedMonth={selectedMonth}
+              selectedMonthStyle={selectedMonthStyle}
+          />
+        </View>
     );
   }
 }

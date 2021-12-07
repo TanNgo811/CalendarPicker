@@ -17,6 +17,8 @@ export default function Month(props) {
     textStyle,
     minDate,
     maxDate,
+    selectedMonth,
+    selectedMonthStyle,
   } = props;
 
   const MONTHS = months || Utils.MONTHS; // English Month Array
@@ -51,20 +53,20 @@ export default function Month(props) {
   };
 
   return (
-    <View style={[styles.monthContainer]}>
-      { !monthOutOfRange ?
-        <TouchableOpacity
-          onPress={onSelect}>
-          <Text style={[styles.monthText, textStyle]}>
-            { monthName }
-          </Text>
-        </TouchableOpacity>
-        :
-        <Text style={[textStyle, styles.disabledText]}>
-          { monthName }
-        </Text>
-      }
-    </View>
+      <View style={[styles.monthContainer]}>
+        { !monthOutOfRange ?
+            <TouchableOpacity
+                onPress={onSelect}>
+              <Text style={[styles.monthText, (monthName === MONTHS[selectedMonth]) && [styles.selectedMonthStyle, selectedMonthStyle], textStyle]}>
+                { monthName }
+              </Text>
+            </TouchableOpacity>
+            :
+            <Text style={[textStyle, styles.disabledText]}>
+              { monthName }
+            </Text>
+        }
+      </View>
   );
 }
 

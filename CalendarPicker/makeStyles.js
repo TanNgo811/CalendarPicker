@@ -226,6 +226,11 @@ export function makeStyles(params) {
       alignSelf: 'center'
     },
 
+    selectedMonthStyle: {
+      fontWeight: '700',
+      fontSize: 14*scaler,
+    },
+
     monthsWrapper: {
       alignSelf: 'center',
       justifyContent: 'center',

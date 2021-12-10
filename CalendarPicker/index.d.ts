@@ -71,6 +71,7 @@ export interface CalendarPickerProps {
     yearTitleStyle?: StyleProp<TextStyle> | undefined;
     customDayHeaderStyles?: CustomDayHeaderStylesFunc | undefined;
     monthPickerEnable?: boolean | undefined;
+    selectedMonthStyle?: StyleProp<ViewStyle> | undefined;
 }
 
 export type DayOfWeekStyle = {
